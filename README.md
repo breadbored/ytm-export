@@ -1,84 +1,24 @@
-# YouTube Music Export
+# Firefox YouTube Music Export
 
-A modern TypeScript-based Chrome extension to export your YouTube Music listening history for personal research.
+## Instructions for building the extension
 
-## Features
+1. **Install Dependencies**: Make sure you have Node.js and npm installed. Then, run:
+   ```bash
+   npm install
+   ```
+2. **Build the Extension**: Use the following command to build the extension:
+   ```bash
+   npm run build
+   ```
+3. **Load the Extension in Firefox**:
+   - Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
+   - Click on "Load Temporary Add-on".
+   - Select the `manifest.json` file from the `extension/ytm-export/dist` directory.
 
-- 🎵 Auto-collect songs while browsing YouTube Music
-- 📊 Export data as JSON with timestamps
-- 🧹 Remove duplicate entries
-- ⚡ Built with TypeScript and Tailwind CSS
-- 🔒 ToS compliant - only collects your own data
+## Instructions for using the extension from Releases
 
-## Development
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm
-
-### Setup
-
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Build the extension:
-```bash
-npm run build
-```
-
-3. Load the extension in Chrome:
-   - Open Chrome and go to `chrome://extensions/`
-   - Enable "Developer mode"
-   - Click "Load unpacked" and select the `dist/` folder
-
-### Development Scripts
-
-- `npm run build` - Build the extension
-- `npm run watch` - Watch for changes and rebuild
-- `npm run clean` - Clean the dist folder
-
-## Project Structure
-
-```
-ytm-export/
-├── src/
-│   ├── types.ts          # TypeScript type definitions
-│   ├── content.ts        # Content script (injected into YouTube Music)
-│   ├── background.ts     # Background script
-│   ├── popup.ts          # Popup script
-│   ├── popup.html        # Popup HTML with Tailwind CSS
-│   ├── styles.css        # Tailwind CSS input
-│   └── manifest.json     # Extension manifest
-├── dist/                 # Built extension files
-├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-└── README.md
-```
-
-## Usage
-
-1. Navigate to YouTube Music
-2. The extension will automatically collect songs as you browse
-3. Use the popup to:
-   - Toggle auto-collection on/off
-   - Extract songs from current page
-   - Export all collected data
-   - Remove duplicates
-   - Clear all data
-
-## Data Format
-
-Exported JSON includes:
-- Song title, artist, album
-- YouTube Music URLs
-- Timestamps
-- Page context (history, playlist, etc.)
-- Explicit content flags
-
-## License
-
-This extension is for personal use only and complies with YouTube Music's Terms of Service.
+1. **Download the Extension**: Go to the [Releases page](https://github.com/breadbored/ytm-export/releases) and download the latest `.xpi` file.
+2. **Install the Extension**:
+   - Open Firefox and navigate to `about:addons`.
+   - Click on the gear icon and select "Install Add-on From File".
+   - Choose the downloaded `.xpi` file.
