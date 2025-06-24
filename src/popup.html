@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body class="w-80 p-4 bg-gray-50 font-sans">
+    <div class="text-lg font-bold text-gray-800 mb-4">YouTube Music Export</div>
+
+    <div class="bg-white p-4 rounded-lg shadow-sm border mb-4">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm text-gray-600">Total songs collected:</span>
+        <span id="totalCount" class="font-semibold text-blue-600">0</span>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-sm text-gray-600">Collection status:</span>
+        <span id="status" class="font-semibold">Loading...</span>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="flex items-center space-x-3 cursor-pointer">
+        <input
+          type="checkbox"
+          id="collectionEnabled"
+          checked
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+        />
+        <span class="text-sm text-gray-700"
+          >Auto-collect songs while browsing</span
+        >
+      </label>
+    </div>
+
+    <div class="space-y-2">
+      <button
+        id="extractNow"
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+      >
+        Extract from current page
+      </button>
+
+      <button
+        id="exportData"
+        class="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+      >
+        Export all data
+      </button>
+
+      <button
+        id="cleanupData"
+        class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+      >
+        Remove duplicates
+      </button>
+
+      <button
+        id="clearData"
+        class="w-full bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200"
+      >
+        Clear all data
+      </button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

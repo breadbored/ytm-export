@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Music Export",
+    "version": "1.0.0",
+    "description": "Export your YouTube Music listening history for personal use",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "downloads",
+        "*://music.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://music.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "YouTube Music Export"
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "ytm-export",
+  "version": "1.0.0",
+  "description": "YouTube Music Export - Export your YouTube Music listening history",
+  "scripts": {
+    "build": "npm run build:css && npm run build:ts && npm run copy:assets",
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
+    "build:ts": "tsc",
+    "copy:assets": "cp src/manifest.json src/popup.html dist/",
+    "watch": "npm run build && npm run watch:css & npm run watch:ts",
+    "watch:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "watch:ts": "tsc --watch",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.0.0"
+  }
+}
