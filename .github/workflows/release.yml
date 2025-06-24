@@ -29,6 +29,7 @@ jobs:
           cd dist
           zip -r ../extension.xpi .
           cd ..
+          echo "Extension package created: extension.xpi"
 
       - name: Upload Release Asset
         uses: softprops/action-gh-release@v2
