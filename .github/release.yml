@@ -1,4 +1,4 @@
-name: Build and Release Firefox Extension
+name: Build and Release YTM Firefox Extension
 
 on:
   push:
